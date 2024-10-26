@@ -167,7 +167,7 @@ def create_kb_role(region, account_id, pinecone_key_sm_arn):
                     
                     
                     # download the file from a url and upload to S3
-                    r = requests.get(url)
+                    r = requests.get(upload_file_url)
                     file_content = BytesIO(r.content)
                     s3_client.upload_fileobj(file_content, bucket_name, s3_folder+'/'+kb_key)
                     
